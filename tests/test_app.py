@@ -1,8 +1,13 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
-from app import greet
+
+# Ensure src folder is importable *before* other imports
+SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../src"))
+if SRC_PATH not in sys.path:
+    sys.path.insert(0, SRC_PATH)
+
+import app  # noqa: E402
 
 
 def test_greet():
-    assert greet("DevOps") == "Hello, DevOps!"
+    assert app.greet("DevOps") == "Hello, DevOps!"
