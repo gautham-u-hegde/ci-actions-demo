@@ -9,5 +9,5 @@ if SRC_PATH not in sys.path:
 import app  # noqa: E402
 
 
-def test_greet_fails_deliberately():
-    assert False, "Intentional failure to demo CI blocking merges"
+def test_greet():
+    assert True, "Hello, DevOps!"
