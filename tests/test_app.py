@@ -10,4 +10,4 @@ import app  # noqa: E402
 
 
 def test_greet():
-    assert True, "Hello, DevOps!"
+    assert app.greet("DevOps") == "Hello, DevOps!"
